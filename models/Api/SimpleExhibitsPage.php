@@ -1,16 +1,18 @@
 <?php 
 
-class Api_SimplePagesPage extends Omeka_Record_Api_AbstractRecordAdapter
+class Api_SimpleExhibitsPage extends Omeka_Record_Api_AbstractRecordAdapter
 {
 	public function getRepresentation(Omeka_Record_AbstractRecord $record)
 	{
 		$representation = array(
 		    'id' =>$record->id,
-		    'url' => $this->getResourceUrl("/simple_pages/{$record->id}"),
+		    'url' => $this->getResourceUrl("/simple_exhibits/{$record->id}"),
 		    'is_published'        => (bool)$record->is_published,
+			'is_featured'		  => (bool)$record->is_featured
 		    'title'               => $record->title,
 		    'slug'                => $record->slug,
-		    'text'                => $record->text,
+		    'text'                => $record->text, // header text
+			'content'			  => $record->content, // exhibit content
 		    'updated'             => self::getDate($record->updated),
 		    'inserted'            => self::getDate($record->inserted),
 		    'order'               => $record->order,
@@ -39,8 +41,8 @@ class Api_SimplePagesPage extends Omeka_Record_Api_AbstractRecordAdapter
 		if($record->parent_id){
 		    $representation['parent'] = array(
 		        'id'  => $record->parent_id,
-		        'resource' => 'simple_pages',
-		        'url' => self::getResourceUrl("/simple_pages/{$record->parent_id}"),
+		        'resource' => 'simple_exhibits',
+		        'url' => self::getResourceUrl("/simple_exhibits/{$record->parent_id}"),
 		    ); 
 		}else{
 		    $representation['parent'] = null;

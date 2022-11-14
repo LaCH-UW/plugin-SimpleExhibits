@@ -7,24 +7,27 @@
  */
 
 /**
- * The Simple Pages page record class.
+ * The Simple Exhibits page record class.
  *
- * @package SimplePages
+ * @package SimpleExhibits
  */
-class SimplePagesPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Resource_Interface
+class SimpleExhibitsPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Resource_Interface
 {
     public $modified_by_user_id;
     public $created_by_user_id;
     public $is_published = 0;
+    public $is_featured = 0;
     public $title;
     public $slug;
-    public $text = null;
+    public $text = null; // header content
+    public $content = null; //exhibit content
     public $updated;
     public $inserted;
     public $order = 0;
     public $parent_id = 0;
     public $template = '';
-    public $use_tiny_mce = 0;
+    public $use_tiny_mce_text = 0;
+    public $use_tiny_mce_content = 0;
     
     protected function _initializeMixins()
     {
@@ -122,6 +125,7 @@ class SimplePagesPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Re
         $this->setSearchTextTitle($this->title);
         $this->addSearchText($this->title);
         $this->addSearchText($this->text);
+        $this->addSearchText($this->content); //
     }
     
     /**
@@ -147,7 +151,7 @@ class SimplePagesPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Re
      */
     public function getPotentialParentPages() 
     {
-        return $this->getTable('SimplePagesPage')->findPotentialParentPages($this->id);
+        return $this->getTable('SimpleExhibitsPage')->findPotentialParentPages($this->id);
     }
     
     /**
@@ -158,7 +162,7 @@ class SimplePagesPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Re
     */
     public function getAncestors()
     {        
-        return $this->getTable('SimplePagesPage')->findAncestorPages($this->id);
+        return $this->getTable('SimpleExhibitsPage')->findAncestorPages($this->id);
     }
     
     
@@ -169,7 +173,7 @@ class SimplePagesPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Re
     */
     public function getChildren()
     {
-        return $this->getTable('SimplePagesPage')->findChildrenPages($this->id);
+        return $this->getTable('SimpleExhibitsPage')->findChildrenPages($this->id);
     }
     
     public function getRecordUrl($action = 'show')
@@ -177,7 +181,7 @@ class SimplePagesPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Re
         if ('show' == $action) {
             return public_url($this->slug);
         }
-        return array('module' => 'simple-pages', 'controller' => 'index', 
+        return array('module' => 'simple-exhibits', 'controller' => 'index', 
                      'action' => $action, 'id' => $this->id);
     }
     
@@ -194,6 +198,6 @@ class SimplePagesPage extends Omeka_Record_AbstractRecord implements Zend_Acl_Re
     }
     public function getResourceId()
     {
-	return 'SimplePages_Page';
+	return 'SimpleExhibits_Page';
     }
 }

@@ -7,11 +7,11 @@
  */
 
 /**
- * The Simple Pages page table class.
+ * The Simple Exhibits page table class.
  *
- * @package SimplePages
+ * @package SimpleExhibits
  */
-class SimplePagesPageTable extends Omeka_Db_Table
+class SimpleExhibitsPageTable extends Omeka_Db_Table
 {
     /**
      * Find all pages, ordered by slug name.
@@ -29,6 +29,7 @@ class SimplePagesPageTable extends Omeka_Db_Table
         $alias = $this->getTableAlias();
         $paramNames = array('parent_id', 
                             'is_published',
+                            'is_featured',
                             'title', 
                             'slug',
                             'created_by_user_id',
@@ -187,8 +188,8 @@ class SimplePagesPageTable extends Omeka_Db_Table
     public function getSelect()
     {
         $select = parent::getSelect();
-        $permissions = new Omeka_Db_Select_PublicPermissions('SimplePages_Page');
-        $permissions->apply($select, 'simple_pages_pages','created_by_user_id','is_published');
+        $permissions = new Omeka_Db_Select_PublicPermissions('SimpleExhibits_Page');
+        $permissions->apply($select, 'simple_exhibits_pages','created_by_user_id','is_published');
         
         
         return $select;

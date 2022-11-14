@@ -1,4 +1,4 @@
-# Translation for the Simple Pages plugin for Omeka.
+# Translation for the Simple Exhibits plugin for Omeka.
 # Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
 # This file is distributed under the same license as the Omeka package.
 # 
@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Omeka Classic\n"
-"Report-Msgid-Bugs-To: http://github.com/omeka/plugin-SimplePages/issues\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/plugin-SimpleExhibits/issues\n"
 "POT-Creation-Date: 2012-01-09 21:49-0500\n"
 "PO-Revision-Date: 2018-09-30 17:23+0000\n"
 "Last-Translator: Daniele Binaghi\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: SimplePagesPlugin.php:246
+#: SimpleExhibitsPlugin.php:246
 msgid "Simple Pages"
 msgstr "Simple Pages"
 
-#: SimplePagesPlugin.php:272
+#: SimpleExhibitsPlugin.php:272
 msgid "Simple Page"
 msgstr "Simple Page"
 
@@ -102,49 +102,49 @@ msgstr "La pagina \"%s\" è stata modificata."
 msgid "The page \"%s\" has been deleted."
 msgstr "La pagina \"%s\" è stata eliminata."
 
-#: helpers/SimplePageFunctions.php:139
+#: helpers/SimpleExhibitFunctions.php:139
 msgid "Home"
 msgstr "Home"
 
-#: helpers/SimplePageFunctions.php:184
+#: helpers/SimpleExhibitFunctions.php:184
 msgid "Main Page (No Parent)"
 msgstr "Pagina principale (nessuna pagina superiore)"
 
-#: models/SimplePagesPage.php:61
+#: models/SimpleExhibitsPage.php:61
 msgid "The page must be given a title."
 msgstr "La pagina deve avere un titolo."
 
-#: models/SimplePagesPage.php:65
+#: models/SimpleExhibitsPage.php:65
 msgid "The title for your page must be 255 characters or less."
 msgstr "Il titolo della pagina deve essere al massimo di 255 caratteri."
 
-#: models/SimplePagesPage.php:69
+#: models/SimpleExhibitsPage.php:69
 msgid "The title is already in use by another page. Please choose another."
 msgstr "Questo titolo è già in uso per un'altra pagina. Scegli un titolo diverso, per favore."
 
-#: models/SimplePagesPage.php:73
+#: models/SimpleExhibitsPage.php:73
 msgid "The page must be given a valid slug."
 msgstr "La pagina deve avere uno \"slug\" valido."
 
-#: models/SimplePagesPage.php:77
+#: models/SimpleExhibitsPage.php:77
 msgid "The slug for your page must not be a forward slash."
 msgstr "Lo slug della tua pagina non deve essere una barra inclinata avanti."
 
-#: models/SimplePagesPage.php:81
+#: models/SimpleExhibitsPage.php:81
 msgid "The slug for your page must be 255 characters or less."
 msgstr "Lo slug per la pagina deve essere al massimo di 255 caratteri."
 
-#: models/SimplePagesPage.php:85
+#: models/SimpleExhibitsPage.php:85
 msgid "The slug is already in use by another page. Please choose another."
 msgstr "Lo slug è già in uso per un'altra pagina. Si prega di sceglierne un'altro."
 
-#: models/SimplePagesPage.php:89
+#: models/SimpleExhibitsPage.php:89
 msgid "The order must be an integer greater than or equal to 0."
 msgstr "L'ordine deve essere un numero intero maggiore o uguale a 0."
 
 #: views/admin/index/add.php:6
-msgid "Simple Pages | Add Page"
-msgstr "Simple Pages | Aggiungi una pagina"
+msgid "Simple Exhibits | Add Page"
+msgstr "Simple Exhibits | Aggiungi una pagina"
 
 #: views/admin/index/browse-hierarchy-page.php:16
 #: views/admin/index/browse-list.php:33
@@ -165,8 +165,8 @@ msgid "Last Modified"
 msgstr "Ultima modifica"
 
 #: views/admin/index/browse.php:3
-msgid "Simple Pages | Browse"
-msgstr "Simple Pages | Sfoglia"
+msgid "Simple Exhibits | Browse"
+msgstr "Simple Exhibits | Sfoglia"
 
 #: views/admin/index/browse.php:9
 msgid "List View"
@@ -190,8 +190,8 @@ msgstr "Aggiungi una pagina."
 
 #: views/admin/index/edit.php:6
 #, php-format
-msgid "Simple Pages | Edit \"%s\""
-msgstr "Simple Pages | Modifica \"%s\""
+msgid "Simple Exhibits | Edit \"%s\""
+msgstr "Simple Exhibits | Modifica \"%s\""
 
 #: views/admin/index/edit.php:11
 #, php-format
