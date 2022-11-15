@@ -275,6 +275,9 @@ class SimpleExhibits_IndexController extends Omeka_Controller_AbstractActionCont
                             else if ( substr( $fhead, 0, 8 ) === '52494646' && substr( $fhead, -8 ) === '57454250' ) {
                                 $fext = 'webp';
                             }
+                            if (in_array (substr( $fhead, 0, 16) === '89504E470D0A1A0A', true) === true) {
+                                $fext = 'png';
+                            }
                         }
                         unset( $fhead );
                     }
