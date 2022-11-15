@@ -9,8 +9,8 @@
 
 require_once dirname(__FILE__) . '/helpers/SimpleExhibitFunctions.php';
 
-define('CKC_SPAGES_COVERS_DIR', realpath(FILES_DIR) . '/simple_pages_covers'); //20201109 CKC: directory for storing cover images
-define('CKC_SPAGES_COVERS_URI', WEB_FILES . '/simple_pages_covers'); //20201111 CKC: for convenience
+define('CKC_SEXHIBITS_COVERS_DIR', realpath(FILES_DIR) . '/simple_exhibits_covers'); //20201109 CKC: directory for storing cover images
+define('CKC_SEXHIBITS_COVERS_URI', WEB_FILES . '/simple_exhibits_covers'); //20201111 CKC: for convenience
 /**
  * Simple Exhibits plugin.
  */
@@ -68,11 +68,11 @@ class SimpleExhibitsPlugin extends Omeka_Plugin_AbstractPlugin
         ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
         $db->query($sql);
         
-        //        $made = @mkdir( CKC_SPAGES_COVERS_DIR, 0770, true );
-        $made = @mkdir( CKC_SPAGES_COVERS_DIR, 0771, true );
+        //        $made = @mkdir( CKC_SEXHIBITS_COVERS_DIR, 0770, true );
+        $made = @mkdir( CKC_SEXHIBITS_COVERS_DIR, 0771, true );
 
-        if ( $made !== true || is_readable( CKC_SPAGES_COVERS_DIR ) === false ) {
-            throw new Omeka_Storage_Exception('Error creating directory: ' . CKC_SPAGES_COVERS_DIR);
+        if ( $made !== true || is_readable( CKC_SEXHIBITS_COVERS_DIR ) === false ) {
+            throw new Omeka_Storage_Exception('Error creating directory: ' . CKC_SEXHIBITS_COVERS_DIR);
         }
 
 
@@ -172,9 +172,9 @@ class SimpleExhibitsPlugin extends Omeka_Plugin_AbstractPlugin
         if ( $oldVersion < '9999.20201109' ) { //20201109 CKC
             $db->query("ALTER TABLE `$db->SimplePagesPage` ADD COLUMN `ckc_cover_image` TEXT COLLATE utf8_unicode_ci");
 
-            $made = @mkdir( CKC_SPAGES_COVERS_DIR, 0770, true );
-            if ( $made !== true || is_readable( CKC_SPAGES_COVERS_DIR ) === false ) {
-                throw new Omeka_Storage_Exception('Error creating directory: ' . CKC_SPAGES_COVERS_DIR);
+            $made = @mkdir( CKC_SEXHIBITS_COVERS_DIR, 0770, true );
+            if ( $made !== true || is_readable( CKC_SEXHIBITS_COVERS_DIR ) === false ) {
+                throw new Omeka_Storage_Exception('Error creating directory: ' . CKC_SEXHIBITS_COVERS_DIR);
             }
         }
     }

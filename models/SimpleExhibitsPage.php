@@ -194,7 +194,7 @@ class SimpleExhibitsPage extends Omeka_Record_AbstractRecord implements Zend_Acl
             case 'modified_username':
                 return $this->getModifiedByUser()->username;
             case 'ckc_cover_image_uri': //20201111 CKC
-                return ( ( $this->ckc_cover_image !== null ) ? CKC_SPAGES_COVERS_URI . '/' . $this->ckc_cover_image : null );
+                return ( ( $this->ckc_cover_image !== null ) ? CKC_SEXHIBITS_COVERS_URI . '/' . $this->ckc_cover_image : null );
             default:
                 return parent::getProperty($property);
         }
