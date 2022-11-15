@@ -93,8 +93,8 @@ class SimpleExhibits_IndexController extends Omeka_Controller_AbstractActionCont
             'description' => __('Upload an image file to be displayed as a cover photo. '
                 . 'Maximum filesize is 1 MiB.<br/>Allowed image formats: gif, jpeg, jpeg2000, png, webp.<br/>Current file:<br/>%s',
                 ( ( (string)$page['ckc_cover_image'] !== '' ) ? '<a href="'
-                . CKC_SPAGES_COVERS_URI . '/' . $page['ckc_cover_image'] . '">'
-                . CKC_SPAGES_COVERS_DIR . '/' . $page['ckc_cover_image'] . '</a>' : '-' ) )
+                . CKC_SEXHIBITS_COVERS_URI . '/' . $page['ckc_cover_image'] . '">'
+                . CKC_SEXHIBITS_COVERS_DIR . '/' . $page['ckc_cover_image'] . '</a>' : '-' ) )
             )
         );
     
@@ -285,18 +285,18 @@ class SimpleExhibits_IndexController extends Omeka_Controller_AbstractActionCont
 
                     $ckc_error = ''; //non–critical errors
                     $fname = uniqid() . '.' . $fext;
-                    if ( file_exists( CKC_SPAGES_COVERS_DIR . '/' . $fname ) === true ) {
+                    if ( file_exists( CKC_SEXHIBITS_COVERS_DIR . '/' . $fname ) === true ) {
                         $ckc_error = __( 'Could not write cover image under %s filename.', $fname );
                     }
                     else if ( $_FILES['ckc_page_cover']['size'] > 1024 * 1024 * 1 ) {
                         $ckc_error = __('File size is greater than 1 MiB. File was not saved.');
                     }
-                    else if ( disk_free_space(CKC_SPAGES_COVERS_DIR) < $_FILES['ckc_page_cover']['size'] * 100 ) {
+                    else if ( disk_free_space(CKC_SEXHIBITS_COVERS_DIR) < $_FILES['ckc_page_cover']['size'] * 100 ) {
                         //It's not a good idea to fill up the whole disk – safe treshold placed here is filesize * 100
                         $ckc_error = 'Cover image was not saved since the file\'s directory is running out of free space.';
                     }
                     else {
-                        if ( move_uploaded_file( $_FILES['ckc_page_cover']['tmp_name'], CKC_SPAGES_COVERS_DIR . '/' . $fname ) === false ) {
+                        if ( move_uploaded_file( $_FILES['ckc_page_cover']['tmp_name'], CKC_SEXHIBITS_COVERS_DIR . '/' . $fname ) === false ) {
                             $ckc_error = __('Cover image was not saved. Try checking the server logs for details.');
                         }
                     }
@@ -305,7 +305,7 @@ class SimpleExhibits_IndexController extends Omeka_Controller_AbstractActionCont
                         //20201111: we're replacing or removing an image… in any case, deleting previous file is in order
                         //it is assumed here that $page['ckc_cover_image'] contains a safe value,
                         //if not, then someone was messing with the database, hence the removal of obvious buggers, just in case.
-                        unlink( CKC_SPAGES_COVERS_DIR . '/' . str_replace( array('/', '*'), '', $page['ckc_cover_image'] ) );
+                        unlink( CKC_SEXHIBITS_COVERS_DIR . '/' . str_replace( array('/', '*'), '', $page['ckc_cover_image'] ) );
                         $page['ckc_cover_image'] = null;
                     }
                     if ( $ckc_error === '' ) {
