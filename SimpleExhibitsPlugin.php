@@ -349,6 +349,12 @@ class SimpleExhibitsPlugin extends Omeka_Plugin_AbstractPlugin
 	$apiResources['simple_exhibits'] = array(
 		'record_type' => 'SimpleExhibitsPage',
 		'actions'   => array('get','index'),
+        'index_params' => array(
+            'advanced',
+            'search',
+            'featured',
+            'slug',
+        )
 	);	
        return $apiResources;
     }
