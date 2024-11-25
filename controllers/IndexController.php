@@ -91,7 +91,7 @@ class SimpleExhibits_IndexController extends Omeka_Controller_AbstractActionCont
             'id' => 'simple-pages-cover',
             'label' => __('Cover image'),
             'description' => __('Upload an image file to be displayed as a cover photo. '
-                . 'Maximum filesize is 1 MiB.<br/>Allowed image formats: gif, jpeg, jpeg2000, png, webp.<br/>Current file:<br/>%s',
+                . 'Maximum filesize is 10 MiB.<br/>Allowed image formats: gif, jpeg, jpeg2000, png, webp.<br/>Current file:<br/>%s',
                 ( ( (string)$page['ckc_cover_image'] !== '' ) ? '<a href="'
                 . CKC_SEXHIBITS_COVERS_URI . '/' . $page['ckc_cover_image'] . '">'
                 . CKC_SEXHIBITS_COVERS_DIR . '/' . $page['ckc_cover_image'] . '</a>' : '-' ) )
@@ -291,8 +291,8 @@ class SimpleExhibits_IndexController extends Omeka_Controller_AbstractActionCont
                     if ( file_exists( CKC_SEXHIBITS_COVERS_DIR . '/' . $fname ) === true ) {
                         $ckc_error = __( 'Could not write cover image under %s filename.', $fname );
                     }
-                    else if ( $_FILES['ckc_page_cover']['size'] > 1024 * 1024 * 1 ) {
-                        $ckc_error = __('File size is greater than 1 MiB. File was not saved.');
+                    else if ( $_FILES['ckc_page_cover']['size'] > 1024 * 1024 * 10 ) {
+                        $ckc_error = __('File size is greater than 10 MiB. File was not saved.');
                     }
                     else if ( disk_free_space(CKC_SEXHIBITS_COVERS_DIR) < $_FILES['ckc_page_cover']['size'] * 100 ) {
                         //It's not a good idea to fill up the whole disk – safe treshold placed here is filesize * 100
