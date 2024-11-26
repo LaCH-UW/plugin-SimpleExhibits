@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Translation for the Simple Exhibits plugin for Omeka.
 # Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
 # This file is distributed under the same license as the Omeka package.
@@ -179,3 +180,186 @@ msgid ""
 "This page was created by <strong>%1$s</strong> on %2$s, and last modified by"
 " <strong>%3$s</strong> on %4$s."
 msgstr "Ta wystawa została utworzona przez <strong>%1$s</strong> dnia %2$s i ostatnio modyfikowana przez <strong>%3$s</strong> w dniu %4$s."
+=======
+# Translation for the Simple Exhibits plugin for Omeka.
+# Copyright (C) 2011 Roy Rosenzweig Center for History and New Media
+# This file is distributed under the same license as the Omeka package.
+# 
+# Translators:
+# Dominik Broniszewski <dominik@broniszewski.pl>, 2013
+# John Flatness <john@zerocrates.org>, 2014
+# vortage <vortage@o2.pl>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Omeka Classic\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/plugin-SimpleExhibits/issues\n"
+"POT-Creation-Date: 2012-01-09 21:49-0500\n"
+"PO-Revision-Date: 2018-05-02 15:01+0000\n"
+"Last-Translator: John Flatness <john@zerocrates.org>\n"
+"Language-Team: Polish (http://www.transifex.com/omeka/omeka/language/pl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: SimpleExhibitsPlugin.php:272
+msgid "Simple Exhibits"
+msgstr "Proste wystawy"
+
+#: SimpleExhibitsPlugin.php:298
+msgid "Simple Exhibit"
+msgstr "Prosta wystawa"
+
+#: controllers/IndexController.php:67
+msgid "Name and heading for the page (required)"
+msgstr "Nazwa i nagłówek wystawy (wymagane)"
+
+#: controllers/IndexController.php:77 views/admin/index/browse-list.php:7
+msgid "Slug"
+msgstr "Skrót ścieżki URL"
+
+#: controllers/IndexController.php:79
+msgid ""
+"The slug is the part of the URL for this exhibit. A slug will be created "
+"automatically from the title if one is not entered. Letters, numbers, "
+"underscores, dashes, and forward slashes are allowed."
+msgstr "Skrót ścieżki URL jest częścią adresu wystawy. Skrót zostanie utworzony automatycznie w oparciu o tytuł jeśli nie zostanie wpisany ręcznie. Przy tworzeniu dozwolone są litery, cyfry, oraz znaki podkreślenia, myślniki i ukośniki."
+
+#: controllers/IndexController.php:108
+msgid "Use HTML editor?"
+msgstr "Użyć edytora HTML?"
+
+#: controllers/IndexController.php:110
+msgid "Check this to add an HTML editor bar for easily creating HTML."
+msgstr "Zaznaczenie pola wywoła pasek edytora HTML, ułatwiającego tworzenie strony HTML."
+
+#: controllers/IndexController.php:124
+msgid "Header Text"
+msgstr "Treść nagłówka"
+
+#: controllers/IndexController.php:108
+msgid "Add text to the header of the exhbibit page."
+msgstr "Dodaj treść nagłówka wystawy."
+
+#: controllers/IndexController.php:190
+msgid "Publish this page?"
+msgstr "Opublikować tę wystawę?"
+
+#: controllers/IndexController.php:191
+msgid "Checking this box will make the page public"
+msgstr "Oznaczenie pola spowoduje opublikowanie wystawy."
+
+#: controllers/IndexController.php:322
+#, php-format
+msgid "The page \"%s\" has been added."
+msgstr "Wystawa \"%s\" została dodana."
+
+#: controllers/IndexController.php:324
+#, php-format
+msgid "The page \"%s\" has been edited."
+msgstr "Wystawa \"%s\" została poprawiona."
+
+#: controllers/IndexController.php:339
+#, php-format
+msgid "The page \"%s\" has been deleted."
+msgstr "Wystawa \"%s\" została usunięta."
+
+#: helpers/SimpleExhibitFunctions.php:139
+msgid "Home"
+msgstr "Strona domowa"
+
+#: helpers/SimpleExhibitFunctions.php:186
+msgid "Main Page (No Parent)"
+msgstr "Strona główna (bez nadrzędnej)"
+
+#: models/SimpleExhibitsPage.php:65
+msgid "The page must be given a title."
+msgstr "Stonie musi zostać nadany tytuł."
+
+#: models/SimpleExhibitsPage.php:69
+msgid "The title for your page must be 255 characters or less."
+msgstr "Tytuł strony może maksymalnie zawierać do 255 znaków."
+
+#: models/SimpleExhibitsPage.php:73
+msgid "The title is already in use by another page. Please choose another."
+msgstr "Tytuł jest już używany przez inną stronę. Proszę wybrać inny."
+
+#: models/SimpleExhibitsPage.php:77
+msgid "The page must be given a valid slug."
+msgstr "Strona musi mieć nadany odpowiedni skrót ścieżki URL."
+
+#: models/SimpleExhibitsPage.php:81
+msgid "The slug for your page must not be a forward slash."
+msgstr "Skrót ścieżki URL strony nie może być ukośnikiem."
+
+#: models/SimpleExhibitsPage.php:85
+msgid "The slug for your page must be 255 characters or less."
+msgstr "Skrót ścieżki URL dla Twojej strony może zawierać do 255 znaków."
+
+#: models/SimpleExhibitsPage.php:89
+msgid "The slug is already in use by another page. Please choose another."
+msgstr "Ten skrót ścieżki URL jest już używany przez inną stronę. Proszę wybrać inny."
+
+#: models/SimpleExhibitsPage.php:93
+msgid "The order must be an integer greater than or equal to 0."
+msgstr "Porządek musi być określony liczbą całkowitą większą lub równą 0."
+
+#: views/admin/index/add.php:6
+msgid "Simple Exhibits | Add Exhibit"
+msgstr "Proste Wystawy | Dodaj wystawę"
+
+#: views/admin/index/browse-hierarchy-page.php:16
+#: views/admin/index/browse-list.php:33
+#, php-format
+msgid "<strong>%1$s</strong> on %2$s"
+msgstr "<strong>%1$s</strong> w %2$s"
+
+#: views/admin/index/browse-hierarchy-page.php:20
+msgid "Published"
+msgstr "Opublikowano"
+
+#: views/admin/index/browse-hierarchy-page.php:20
+msgid "Not Published"
+msgstr "Nie opublikowano"
+
+#: views/admin/index/browse-list.php:7
+msgid "Last Modified"
+msgstr "Ostatnie modyfikacje"
+
+#: views/admin/index/browse.php:4
+msgid "Simple Exhibits | Browse"
+msgstr "Proste wystawy | Przeglądaj"
+
+#: views/admin/index/browse.php:14
+msgid "List View"
+msgstr "Widok listy"
+
+#: views/admin/index/browse.php:18
+msgid "Hierarchy View"
+msgstr "Widok hierarchiczny"
+
+#: views/admin/index/browse.php:23
+msgid "Add a Page"
+msgstr "Dodaj wystawę"
+
+#: views/admin/index/browse.php:25
+msgid "There are no pages."
+msgstr "Nie ma dostępnych stron."
+
+#: views/admin/index/browse.php:25
+msgid "Add a page."
+msgstr "Dodaj stronę."
+
+#: views/admin/index/edit.php:6
+#, php-format
+msgid "Simple Exhibits | Edit \"%s\""
+msgstr "Proste Wystawy | Edycja \"%s\""
+
+#: views/admin/index/edit.php:11
+#, php-format
+msgid ""
+"This page was created by <strong>%1$s</strong> on %2$s, and last modified by"
+" <strong>%3$s</strong> on %4$s."
+msgstr "Ta wystawa została utworzona przez <strong>%1$s</strong> dnia %2$s i ostatnio modyfikowana przez <strong>%3$s</strong> w dniu %4$s."
+>>>>>>> Stashed changes
